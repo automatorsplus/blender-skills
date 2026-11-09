@@ -2,6 +2,12 @@
 
 Connect [BlenderMCP](https://github.com/ahujasid/blender-mcp) to Cursor or Claude Code so the Blender Skills Pack can execute operations directly in Blender.
 
+> **You only need this for live work inside the Blender window.** For finished renders and videos, the
+> `headless-render` skill needs Blender installed and nothing else.
+>
+> The repo's `.mcp.json` is set up for macOS and Linux (`"command": "uvx"`). On Windows, change it to
+> `"command": "cmd"` with `"args": ["/c", "uvx", "--python", "3.11", "blender-mcp"]`.
+
 ## Prerequisites
 
 | Requirement | Version |

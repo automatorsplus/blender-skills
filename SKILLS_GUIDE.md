@@ -1,6 +1,6 @@
 # Blender Skills Guide
 
-Decision trees and workflow combinations for the Blender Skills Pack (**94 skills**).
+Decision trees and workflow combinations for the Blender Skills Pack (**99 skills**).
 
 ## Start Here
 
@@ -14,6 +14,13 @@ For any Blender asset task, **blender-director** analyzes the request and routes
 
 ### Orchestration
 - **blender-director** — Pipeline planning, skill routing, production briefs
+
+### Render Without Opening Blender (added in this fork)
+- **headless-render** — Script to frames to MP4 with Blender closed and no MCP
+- **preview-first** — Six preview stills, contact sheet and a time estimate before any long render
+- **product-ad** — A can or bottle commercial from a label PNG, Cycles
+- **character-from-image** — A picture of a mascot to a jointed blocky 3D character that waves, hops and dances
+- **social-export** — 16:9, 9:16 and 1:1 exports with sound effects made in code
 
 ### Modeling Disciplines
 - **blender-modeler** — General modeling, scene organization, modifiers

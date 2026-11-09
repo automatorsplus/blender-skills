@@ -4,12 +4,12 @@
 
 # Blender Skills
 
-**94 Specialized Skills for Blender Artists.**
+**99 Specialized Skills for Blender Artists.**
 **Transform Cursor, Claude Code, Kiro, and Codex into your Senior Technical Art team — not a tutorial bot.**
 
 [![Version](https://img.shields.io/badge/version-1.3.0-blue.svg)](version.json)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-94-orange.svg)](.claude/skills/)
+[![Skills](https://img.shields.io/badge/skills-99-orange.svg)](.claude/skills/)
 [![Blender MCP](https://img.shields.io/badge/Blender_MCP-integrated-blueviolet.svg)](docs/BLENDER_MCP_SETUP.md)
 [![Cursor](https://img.shields.io/badge/Cursor-skills-blue.svg)](https://cursor.com)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-black.svg)](https://docs.anthropic.com/en/docs/claude-code)
@@ -18,6 +18,31 @@
 [![Website](https://img.shields.io/badge/website-blender--skills.vercel.app-orange.svg)](https://blender-skills.vercel.app/)
 
 </div>
+
+---
+
+## What this fork adds
+
+This is a fork of [arjun988/blender-skills](https://github.com/arjun988/blender-skills), MIT licensed. All 94
+original skills are here unchanged. The original pack drives Blender live through the Blender MCP, which means
+Blender open, an addon installed and a socket connected. This fork adds a second route: **Claude writes the
+scene as a Python script and Blender renders it in the background. Blender never opens, and no MCP is needed.**
+
+| Added skill | What it does |
+| --- | --- |
+| **headless-render** | Script to frames to MP4 with Blender closed. GPU detection on Mac, Nvidia and AMD. The default for any finished image or video |
+| **preview-first** | Six preview stills, a contact sheet and a time estimate before any long render, so nobody waits 40 minutes for the wrong shot |
+| **product-ad** | A can or bottle commercial from a label PNG: condensation, ice and droplet burst, strip lights, slow camera push. Cycles, 16:9 or true vertical |
+| **character-from-image** | A picture of a mascot becomes a jointed blocky 3D character that waves, hops, runs, cheers and dances |
+| **social-export** | 16:9, 9:16 and 1:1 exports at platform sizes, plus pops, whooshes and chimes made in code and placed on the frame |
+
+Also changed: `.mcp.json` runs on macOS and Linux (`uvx` directly; Windows users put `"command": "cmd"` and
+`"args": ["/c", "uvx", "--python", "3.11", "blender-mcp"]` back), and `blender-director` and `CLAUDE.md` route
+to the headless route whenever the MCP is not connected.
+
+**Start here:** install Blender (free, blender.org) and ffmpeg, copy `.claude/skills` into your project, open
+Claude Code there and ask for a render. *Render my mascot in 3D waving*, with the picture in the folder, is a
+good first one.
 
 ---
 
@@ -30,8 +55,8 @@ Works with **Cursor**, **Claude Code**, **Kiro**, and **Codex** — same skill p
 
 **Claude Code**
 ```bash
-git clone https://github.com/arjun988/blender-skills.git
-cp -r blender-skills/.claude/skills /path/to/your/project/.claude/skills/
+git clone https://github.com/automatorsplus/blender-skills.git
+mkdir -p /path/to/your/project/.claude && cp -r blender-skills/.claude/skills /path/to/your/project/.claude/
 ```
 
 **Cursor (Windows)**
@@ -59,9 +84,9 @@ For all installation methods and first steps, see the **[Quick Start Guide](http
 
 ---
 
-## Skills (94)
+## Skills (99)
 
-94 specialized skills across modeling, production, technical, pipeline, art styles, horror packs, worlds, moods, and gameplay genre direction.
+99 specialized skills across modeling, production, technical, pipeline, art styles, horror packs, worlds, moods, and gameplay genre direction.
 
 See **[Skills Guide](SKILLS_GUIDE.md)** for the full list, subtype coverage map, decision trees, and workflow combinations.
 
@@ -192,7 +217,7 @@ Every skill in this pack:
 
 ```
 .claude-plugin/           # Claude Code plugin manifest
-.claude/skills/           # 94 skills + 175+ reference files
+.claude/skills/           # 99 skills + 175+ reference files
   ├── blender-director/
   ├── hard-surface/
   ├── prop-artist/
@@ -264,7 +289,7 @@ MIT License — See [LICENSE](LICENSE) for details.
 
 <div align="center">
 
-**Built for Cursor, Claude Code, Kiro & Codex** | **Blender MCP** | **94 Skills** | **175+ Reference Files**
+**Built for Cursor, Claude Code, Kiro & Codex** | **Blender MCP** | **99 Skills** | **175+ Reference Files**
 
 Inspired by [jeffallan/claude-skills](https://github.com/Jeffallan/claude-skills)
 

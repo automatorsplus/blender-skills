@@ -42,7 +42,8 @@ Every asset follows the universal pipeline in `../references/asset-pipeline.md`.
 2. PLAN       → Select skills, define polycount/texture budgets, export format
 3. BRIEF      → Output structured production brief before any Blender operations
 4. DELEGATE   → Activate specialist skills in pipeline order
-5. EXECUTE    → Drive work via Blender MCP (see ../references/mcp-integration.md)
+5. EXECUTE    → Blender MCP if connected (see ../references/mcp-integration.md); otherwise headless-render.
+                 Finished images and videos always go headless, preview-first before any long render
 6. VALIDATE   → Run checklist (../references/validation-checklist.md)
 7. DELIVER    → Export + validation report
 ```
@@ -64,6 +65,10 @@ Before any work, determine:
 
 | Request Signal | Primary Skill | Supporting Skills |
 |----------------|---------------|-------------------|
+| Finished render or video, "don't open Blender", MCP not connected | headless-render | preview-first, social-export |
+| Product ad, packshot, drink or bottle commercial, brand hero shot | product-ad | headless-render, preview-first, social-export |
+| Mascot or character from a picture, animate my character | character-from-image | headless-render, preview-first, voxel-style |
+| Reel, TikTok, Short, vertical, square, sound on a render | social-export | headless-render |
 | Sci-fi, weapons, machinery, industrial HS | hard-surface | blender-modeler, materials, asset-optimization |
 | Everyday / hero props, kitbash, furniture | prop-artist | materials, uv-workflow, set-dressing, asset-optimization |
 | Cars, ships, aircraft, mechs, transit | vehicle-artist | hard-surface, lod-pipeline, collision-proxy, materials |
@@ -264,7 +269,8 @@ blender-director → asset-optimization → lod-pipeline → collision-proxy →
 
 ## MCP Integration
 
-1. Check Blender MCP availability before Phase 1 execution
+1. Check Blender MCP availability before Phase 1 execution. **Not connected? Do not stop and ask the user to
+   install it: switch to `headless-render`, which builds the same scene from a script with Blender closed.**
 2. Create collection hierarchy via MCP immediately
 3. Query scene state after each pipeline phase
 4. Never describe UI steps when MCP can execute
